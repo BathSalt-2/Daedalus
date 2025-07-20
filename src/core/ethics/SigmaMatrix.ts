@@ -5,9 +5,30 @@
  * Maintains PAS (Positive Alignment Score) ≥ 0.91 threshold
  */
 
-import { EventEmitter } from 'events';
 import { EthicalDecision, CulturalContext, ThreatVector } from '../types/ethics';
 import { MythosCore } from '../cultural/MythosCore';
+
+// Simple EventEmitter implementation for browser compatibility
+class EventEmitter {
+  private events: { [key: string]: Function[] } = {};
+  
+  on(event: string, listener: Function) {
+    if (!this.events[event]) {
+      this.events[event] = [];
+    }
+    this.events[event].push(listener);
+  }
+  
+  emit(event: string, ...args: any[]) {
+    if (this.events[event]) {
+      this.events[event].forEach(listener => listener(...args));
+    }
+  }
+  
+  removeAllListeners() {
+    this.events = {};
+  }
+}
 
 export interface PASMatrix {
   beneficence: number;      // Positive impact score

@@ -5,8 +5,29 @@
  * Maintains on-device ontology cache for offline operation
  */
 
-import { EventEmitter } from 'events';
 import { CulturalContext, CulturalDimensions } from '../types/ethics';
+
+// Simple EventEmitter implementation for browser compatibility
+class EventEmitter {
+  private events: { [key: string]: Function[] } = {};
+  
+  on(event: string, listener: Function) {
+    if (!this.events[event]) {
+      this.events[event] = [];
+    }
+    this.events[event].push(listener);
+  }
+  
+  emit(event: string, ...args: any[]) {
+    if (this.events[event]) {
+      this.events[event].forEach(listener => listener(...args));
+    }
+  }
+  
+  removeAllListeners() {
+    this.events = {};
+  }
+}
 
 export interface CulturalOntology {
   region: string;

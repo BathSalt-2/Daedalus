@@ -6,10 +6,31 @@
  * Implements superposition, decoherence, and temporal corrections
  */
 
-import { EventEmitter } from 'events';
 import { ERPSData, QuantumState, SuperpositionPath, DecoherenceFilter } from '../types/quantum';
 import { SigmaMatrix } from '../ethics/SigmaMatrix';
 import { SecurityCortex } from '../security/SecurityCortex';
+
+// Simple EventEmitter implementation for browser compatibility
+class EventEmitter {
+  private events: { [key: string]: Function[] } = {};
+  
+  on(event: string, listener: Function) {
+    if (!this.events[event]) {
+      this.events[event] = [];
+    }
+    this.events[event].push(listener);
+  }
+  
+  emit(event: string, ...args: any[]) {
+    if (this.events[event]) {
+      this.events[event].forEach(listener => listener(...args));
+    }
+  }
+  
+  removeAllListeners() {
+    this.events = {};
+  }
+}
 
 export class QuantumSandbox extends EventEmitter {
   private psiRegisters: Float32Array;

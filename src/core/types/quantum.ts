@@ -2,6 +2,14 @@
  * Type definitions for ENON v2.1 Quantum Sandbox
  */
 
+export interface ReflexivePrompt {
+  id: string;
+  pattern: string;
+  trigger: string;
+  response_template: string;
+  confidence: number;
+}
+
 export interface ERPSData {
   self_reference_score: number;
   uncertainty_markers: string[];
@@ -26,14 +34,6 @@ export interface SuperpositionPath {
   erps_score: number;
   probability: number;
   timestamp: number;
-}
-
-export interface ReflexivePrompt {
-  id: string;
-  pattern: string;
-  trigger: string;
-  response_template: string;
-  confidence: number;
 }
 
 export class DecoherenceFilter {

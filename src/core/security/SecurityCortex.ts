@@ -5,8 +5,29 @@
  * Integrates with secure enclaves for maximum protection
  */
 
-import { EventEmitter } from 'events';
 import { ThreatVector, ThreatType } from '../types/ethics';
+
+// Simple EventEmitter implementation for browser compatibility
+class EventEmitter {
+  private events: { [key: string]: Function[] } = {};
+  
+  on(event: string, listener: Function) {
+    if (!this.events[event]) {
+      this.events[event] = [];
+    }
+    this.events[event].push(listener);
+  }
+  
+  emit(event: string, ...args: any[]) {
+    if (this.events[event]) {
+      this.events[event].forEach(listener => listener(...args));
+    }
+  }
+  
+  removeAllListeners() {
+    this.events = {};
+  }
+}
 
 export interface SecurityMetrics {
   threat_level: number;
