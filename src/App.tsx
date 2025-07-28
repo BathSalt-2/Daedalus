@@ -430,11 +430,11 @@ const LandingPage: React.FC<{ onEnter: () => void }> = ({ onEnter }) => {
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
               <span className="text-gray-400">Entropy: 0.04</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default App;

@@ -70,7 +70,7 @@ export interface RelationshipPattern {
 export class MythosCore extends EventEmitter {
   private ontologyCache: Map<string, CulturalOntology> = new Map();
   private regionMappings: Map<string, string> = new Map();
-  private defaultDimensions: CulturalDimensions;
+  private defaultDimensions: CulturalDimensions = {} as CulturalDimensions;
   
   constructor() {
     super();
