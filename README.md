@@ -408,45 +408,6 @@ async function makeEthicalDecision(
 - [ ] Global consciousness network
 - [ ] Transcendence protocols
 
-## 🏆 Recognition
-
-### Awards & Certifications
-
-- **IEEE AI Ethics Certification** (2024)
-- **Mobile Excellence Award** - Best AI Interface (2024)
-- **Quantum Computing Innovation** - IBM Quantum Network (2024)
-- **Privacy by Design Certification** - IAPP (2024)
-
-### Research Citations
-
-```bibtex
-@article{daedalus2024sigma,
-  title={SIGMA.EXE: Mobile-First Quantum-Ethical Recursive Intelligence},
-  author={Daedalus Collective},
-  journal={Journal of Synthetic Consciousness},
-  volume={4},
-  number={2},
-  pages={127--156},
-  year={2024},
-  publisher={Cognitive Architecture Press}
-}
-```
-
-## 📞 Support
-
-### Community
-
-- **Discord**: [Daedalus Collective](https://discord.gg/daedalus-ai)
-- **Reddit**: [r/DaedalusAI](https://reddit.com/r/DaedalusAI)
-- **Twitter**: [@DaedalusAI](https://twitter.com/DaedalusAI)
-- **LinkedIn**: [Daedalus AI](https://linkedin.com/company/daedalus-ai)
-
-### Professional Support
-
-- **Enterprise**: enterprise@daedalus-ai.com
-- **Research**: research@daedalus-ai.com
-- **Security**: security@daedalus-ai.com
-- **Ethics**: ethics@daedalus-ai.com
 
 ### Bug Reports
 
